@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://coknthpsa7im1"]
+
+[ext_resource type="PackedScene" uid="uid://3a2pjja7w5nk" path="res://glb_models/tree.glb" id="1_vuxnn"]
+[ext_resource type="Texture2D" uid="uid://dcwa3uby5jeri" path="res://glb_models/realistic_tree_3.png" id="2_8ocwo"]
+[ext_resource type="Texture2D" uid="uid://cp7tj0wa6skwb" path="res://glb_models/realistic_tree_0.png" id="3_m66fg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onbur"]
+albedo_texture = ExtResource("2_8ocwo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_balve"]
+albedo_texture = ExtResource("3_m66fg")
+uv1_scale = Vector3(2, 2, 1)
+
+[node name="tree" unique_id=455858514 instance=ExtResource("1_vuxnn")]
+
+[node name="Cube" parent="." index="0" unique_id=411281107]
+material_override = SubResource("StandardMaterial3D_onbur")
+
+[node name="Sphere" parent="." index="1" unique_id=2018770260]
+material_override = SubResource("StandardMaterial3D_balve")

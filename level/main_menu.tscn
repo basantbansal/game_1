@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://xn61b7irl2kk"]
+
+[ext_resource type="Script" uid="uid://c64qt067va2cs" path="res://general_scripts/main_menu.gd" id="1_5vetp"]
+[ext_resource type="Texture2D" uid="uid://b3h76c47bi4mv" path="res://textures/swappy-20260717-180148.png" id="2_ygiax"]
+[ext_resource type="AudioStream" uid="uid://cpeqksq48l5lk" path="res://sounds/menu_ambience.wav" id="3_ygiax"]
+
+[node name="MainMenu" type="Control" unique_id=438065622]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5vetp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1156274766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ygiax")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1246521776]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.46666667)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=985466005]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 108.0
+offset_right = 764.0
+offset_bottom = 570.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=495469541]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GameTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1553648140]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "My House"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1128762732]
+layout_mode = 2
+text = "Start Game
+"
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1903170026]
+layout_mode = 2
+text = "Settings
+"
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1054771943]
+layout_mode = 2
+text = "Credits
+"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2146324235]
+layout_mode = 2
+text = "Quit Game"
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=1815122177]
+stream = ExtResource("3_ygiax")
+volume_db = -15.0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

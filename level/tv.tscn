@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://y4ev666ymkdk"]
+
+[ext_resource type="PackedScene" uid="uid://c5jqj6gedv0m3" path="res://glb_models/tv_low_poly.glb" id="1_ojrwa"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_aouee"]
+data = PackedVector3Array(0.9438, 0.0028, 0.34219998, -1.0421, 0.0028, 0.041899998, 0.9438, 1.1474, 0.34219998, 0.9438, 1.1474, 0.34219998, -1.0421, 0.0028, 0.041899998, -1.0421, 1.1474, 0.041899998)
+
+[node name="FAB converted" unique_id=594977400 instance=ExtResource("1_ojrwa")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FAB converted model/root/GLTF_SceneRootNode/TV_0/Object_4" parent_id_path=PackedInt32Array(771681780) index="0" unique_id=432972578]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FAB converted model/root/GLTF_SceneRootNode/TV_0/Object_4/StaticBody3D" index="0" unique_id=151015458]
+shape = SubResource("ConcavePolygonShape3D_aouee")

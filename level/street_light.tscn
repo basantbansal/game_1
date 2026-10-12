@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cfbhqf35h5lto"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tvp0j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yhkea"]
+
+[node name="Node3D" type="Node3D" unique_id=1639026518]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1279470457]
+transform = Transform3D(0.26873362, 0, 0, 0, 3.9029531, 0, 0, 0, 0.23269112, 0, 0, 0)
+mesh = SubResource("BoxMesh_tvp0j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=769332688]
+transform = Transform3D(0.3257523, 0, 0, 0, 0.12992288, 0.28478852, 0, -0.048806332, 0.7581094, 0, 1.9851582, 0.36884403)
+mesh = SubResource("BoxMesh_yhkea")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1265738052]
+transform = Transform3D(0.5989228, 0, 0, 0, 0.046412468, 0.3131919, 0, -0.017435132, 0.8337193, 0, 2.0474675, 0.39272082)
+mesh = SubResource("BoxMesh_yhkea")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=582054057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9687746, 0.6393461)
+omni_range = 7.7442713

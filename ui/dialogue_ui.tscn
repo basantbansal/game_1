@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cohxwe8y4bjbv"]
+
+[ext_resource type="Script" uid="uid://ce12axfegrq3x" path="res://general_scripts/dialogue_ui.gd" id="1_gre8m"]
+
+[node name="DialogueUI" type="CanvasLayer" unique_id=1415905325 groups=["dialogue"]]
+script = ExtResource("1_gre8m")
+
+[node name="DialogueBox" type="Panel" parent="." unique_id=1526215634]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -171.0
+offset_right = 2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="NameLabel" type="Label" parent="DialogueBox" unique_id=141259761]
+layout_mode = 0
+offset_left = 542.0
+offset_top = -1.0
+offset_right = 582.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="DialogueText" type="RichTextLabel" parent="DialogueBox" unique_id=2129092439]
+layout_mode = 0
+offset_top = 51.0
+offset_right = 1150.0
+offset_bottom = 169.0
+theme_override_font_sizes/normal_font_size = 26
+
+[node name="ContinueLabel" type="Label" parent="DialogueBox" unique_id=313852161]
+layout_mode = 0
+offset_left = 1075.0
+offset_top = 135.0
+offset_right = 1130.0
+offset_bottom = 158.0
+text = "Press E"
+
+[node name="VoicePlayer" type="AudioStreamPlayer" parent="." unique_id=239939415]

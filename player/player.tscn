@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://sr6atmbwg70u"]
+
+[ext_resource type="Script" uid="uid://pm4ibq0m0nld" path="res://general_scripts/player.gd" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://chrw7g324ksnk" path="res://general_scripts/fp_cam.gd" id="2_rkbax"]
+[ext_resource type="Script" uid="uid://ce2d5qsbhumu4" path="res://general_scripts/player_interact.gd" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://b1pc8wwc4fovw" path="res://ui/player_ui.tscn" id="4_yw30f"]
+[ext_resource type="AudioStream" uid="uid://bnqi8ivrbiy28" path="res://sounds/freesoundsxx-walking-on-concrete-ver-2-268513.mp3" id="5_qjkh3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kqu6x"]
+radius = 0.35
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
+radius = 0.35
+
+[node name="player" type="CharacterBody3D" unique_id=1092923046]
+floor_max_angle = 1.1519173
+script = ExtResource("1_oul6g")
+footstep_sounds = Array[AudioStream]([ExtResource("5_qjkh3")])
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=87615601]
+mesh = SubResource("CapsuleMesh_kqu6x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=215635155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.017827272, 0)
+shape = SubResource("CapsuleShape3D_oul6g")
+
+[node name="head" type="Node3D" parent="." unique_id=1624277899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24823567, 0)
+script = ExtResource("2_rkbax")
+
+[node name="Camera3D" type="Camera3D" parent="head" unique_id=1894106529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5068793, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="head" unique_id=1091298503]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.5068793, 0)
+target_position = Vector3(0, -2, 0)
+script = ExtResource("3_g1dw6")
+
+[node name="player_ui" parent="." unique_id=1215946846 instance=ExtResource("4_yw30f")]
+
+[node name="feet" type="AudioStreamPlayer3D" parent="." unique_id=17637996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.95675546, 0)
+stream = ExtResource("5_qjkh3")
+volume_db = 80.0
+pitch_scale = 1.5
+autoplay = true
+max_distance = 10.0

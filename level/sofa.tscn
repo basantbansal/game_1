@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://644mc58n7m21"]
+
+[ext_resource type="PackedScene" uid="uid://duqamkhbshpue" path="res://glb_models/sofa.glb" id="1_ebyao"]
+[ext_resource type="Texture2D" uid="uid://ba4n3tt7xqtxp" path="res://textures/images (1).jpeg" id="2_pbdto"]
+[ext_resource type="Texture2D" uid="uid://bl0wt011w3epq" path="res://textures/images.jpeg" id="3_drqyl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxfln"]
+albedo_texture = ExtResource("2_pbdto")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15df6"]
+albedo_texture = ExtResource("3_drqyl")
+uv1_scale = Vector3(0.1, 0.1, 5)
+
+[node name="sofa" unique_id=174313903 instance=ExtResource("1_ebyao")]
+
+[node name="Cube_009" parent="." index="0" unique_id=830711594]
+material_override = SubResource("StandardMaterial3D_rxfln")
+
+[node name="Cube_010" parent="Cube_009" index="1" unique_id=2004674137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9089355, 0)
+material_override = SubResource("StandardMaterial3D_15df6")

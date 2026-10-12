@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://qx4e5fgpx6r7"]
+
+[ext_resource type="PackedScene" uid="uid://cixt4juq18pdx" path="res://glb_models/bed (1).glb" id="1_ogu25"]
+[ext_resource type="Texture2D" uid="uid://8sdxbwb3sm1d" path="res://glb_models/bed (1)_11.jpg" id="2_la52v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_no5eo"]
+albedo_texture = ExtResource("2_la52v")
+
+[node name="Sketchfab_Scene" unique_id=1706892609 instance=ExtResource("1_ogu25")]
+transform = Transform3D(1.7989361, 0, 0, 0, 1.316499, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="polySurface2_aiStandardSurface4_0" parent="Sketchfab_model/eb3ec2b012ea48e2b75c4cdbc216ade5_fbx/RootNode/polySurface2" parent_id_path=PackedInt32Array(265625505) index="0" unique_id=1454536262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.200739, 2.4870636e-15)
+
+[node name="polySurface2_aiStandardSurface5_0" parent="Sketchfab_model/eb3ec2b012ea48e2b75c4cdbc216ade5_fbx/RootNode/polySurface2" parent_id_path=PackedInt32Array(265625505) index="1" unique_id=1841500052]
+transform = Transform3D(1, 0, 0, 0, 0.77074707, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="polySurface2_aiStandardSurface3_0" parent="Sketchfab_model/eb3ec2b012ea48e2b75c4cdbc216ade5_fbx/RootNode/polySurface2" parent_id_path=PackedInt32Array(265625505) index="2" unique_id=251798430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.833718, 1.9614795e-15)
+material_override = SubResource("StandardMaterial3D_no5eo")
+
+[node name="polySurface2_aiStandardSurface6_0" parent="Sketchfab_model/eb3ec2b012ea48e2b75c4cdbc216ade5_fbx/RootNode/polySurface2" parent_id_path=PackedInt32Array(265625505) index="3" unique_id=671500158]
+visible = false

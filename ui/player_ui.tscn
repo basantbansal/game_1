@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b1pc8wwc4fovw"]
+
+[ext_resource type="Texture2D" uid="uid://h8ttpmwc4vxf" path="res://textures/icons8-circle-24.png" id="1_cfom6"]
+[ext_resource type="Script" uid="uid://0b1rbywk5j5k" path="res://general_scripts/player_ui.gd" id="1_ehg4m"]
+[ext_resource type="PackedScene" uid="uid://reahxd8xjpvl" path="res://ui/pause_menu.tscn" id="3_iwa1g"]
+[ext_resource type="PackedScene" uid="uid://chxdyp380nshc" path="res://ui/task_ui.tscn" id="3_lp0io"]
+
+[node name="player_ui" type="Control" unique_id=1215946846]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ehg4m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=93944305]
+
+[node name="crosshair" type="CenterContainer" parent="CanvasLayer" unique_id=1242936426]
+offset_right = 1153.0
+offset_bottom = 654.0
+
+[node name="crosshairtex" type="TextureRect" parent="CanvasLayer/crosshair" unique_id=1524750308]
+layout_mode = 2
+texture = ExtResource("1_cfom6")
+
+[node name="task_ui" parent="." unique_id=1981700777 instance=ExtResource("3_lp0io")]
+
+[node name="pause_menu" parent="." unique_id=404249772 instance=ExtResource("3_iwa1g")]
+
+[connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
+[connection signal="pressed" from="pause_menu/quit_game" to="." method="quit_game"]
+
+[editable path="pause_menu"]
