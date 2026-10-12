@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://devncqjqcyyu8"]
+
+[ext_resource type="Script" uid="uid://ba7borl13kpau" path="res://character_body_3d.gd" id="1_ig7tw"]
+[ext_resource type="ArrayMesh" uid="uid://f7r7n6w2vw56" path="res://California_King_Size_Bed_With_Thyme_Sheets_Pine_V1_NEW.obj" id="2_0xm2m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dm0k"]
+radius = 1.3012695
+height = 5.3476563
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+
+[node name="Node3D" type="Node3D" unique_id=1922261435]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=304314397]
+transform = Transform3D(-0.2101502, 0.0013985656, 19.998404, -0.48050904, 0.199937, -0.14487246, -19.993122, -0.00481993, -0.2067243, -80.554565, 10.11212, -5.9639654)
+mesh = SubResource("BoxMesh_7dm0k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=897460009]
+transform = Transform3D(-0.00086683646, -0.08376984, -4.9831104, -1.5528261e-05, 4.9992876, -0.066045456, 0.00049835077, 0.010064153, -8.669731, 207.72408, 15.510094, 19.099442)
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2145372844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.19051, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=849912879]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -33.20749, 8.126425, 0)
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=2082728108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=1530391683]
+shape = SubResource("CapsuleShape3D_7dm0k")
+
+[node name="Head" type="Node3D" parent="player" unique_id=1409427260]
+
+[node name="Camera3D" type="Camera3D" parent="player/Head" unique_id=889070577]
+transform = Transform3D(-0.9727328, 0.07624458, -0.21903795, 0.013179198, 0.961065, 0.27600774, 0.23155385, 0.26559505, -0.9358643, 0, 5.6057873, 0)
+current = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=806316630]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1288860127]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1494733895]
+transform = Transform3D(9.9, 0, 0, 0, 9.9, 0, 0, 0, 9.9, 0, 0, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1943968299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.409094, 3, 0)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 3.693
+light_size = 0.119
+light_specular = 0.0
+omni_range = 4096.0
+omni_attenuation = 0.604
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=631550658]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 10, 0, -48.506634, 0)
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=433941505]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 0, -47.456276, 4.5121436)
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="CaliforniaKingSizeBedWithThymeSheetsPineV1New" type="MeshInstance3D" parent="." unique_id=1098539532]
+transform = Transform3D(0.1, 0, 0, 0, -0.0014136721, 0.09999, 0, -0.09999, -0.0014136721, -30.946243, -43.925205, -29.92258)
+mesh = ExtResource("2_0xm2m")
